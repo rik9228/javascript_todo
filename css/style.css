@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+body {
+  background: #ece7d1;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+ul {
+  padding: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px 0px #00000020;
+}
+
+input {
+  padding: 0.5em;
+}
+
+.header__title {
+  text-align: center;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 0 2px 2px #00000020;
+  padding: 32px;
+}
+
+.todo__listItem {
+  display: flex;
+  max-width: 450px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.todo__id {
+  margin-right: 16px;
+  font-weight: 800;
+}
+
+.button--edit,
+.button--completed,
+.button--delete,
+.button--add {
+  margin-left: 24px;
+  padding: 0.4em 0.8em;
+}
+
+.button--completed,
+.button--delete,
+.button--edit {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  transition: 0.5s;
+  position: relative;
+  border: 1px solid #cccccc;
+}
+
+.button--delete,
+.button--edit {
+  background: #cc0028;
+  position: relative;
+}
+
+.button--edit {
+  background: #d7ce07;
+  margin-left: auto;
+}
+
+.button--completed:hover,
+.button--delete:hover,
+.button--edit:hover {
+  opacity: 0.8;
+}
+
+.button--delete::before,
+.button--edit::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button--delete::before {
+  background: url(../img/icon_trash.svg) no-repeat center / contain;
+}
+
+.button--edit::before {
+  background: url(../img/icon_edit.svg) no-repeat center / contain;
+}
+
+.button--completed.js-active {
+  border: none;
+}
+
+.button--completed.js-active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 48%;
+  left: 35%;
+  transform: rotate(45deg) translate(-50%, -50%);
+  width: 5px;
+  height: 14px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.editTodo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.editTodo.js-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.editTodo__wrapper {
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.editTodo__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editForm__form,
+.editTodo__submit,
+.editTodo__return {
+  width: 100%;
+}
+
+.editForm__form {
+  padding: 0.5em;
+}
+
+.editTodo__submit,
+.editTodo__return {
+  margin-top: 16px;
+  padding: 0.4em;
+}
+
+.editTodo__submit {
+  background: #00bb51;
+  color: #fff;
+}
+
+.js-active {
+  background: #00bb51 !important;
+}
+
+.js-filtered {
+  display: none !important;
+}
+
+.js-caution {
+  color: red !important;
+}

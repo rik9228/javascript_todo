@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Todoリスト</h1>
+    </header>
+    <div class="container">
+      <form class="addFormWrapper" action="">
+        <input type="text" class="addForm" placeholder="買い物をする" />
+        <button class="button--add" type="text">タスクを登録</button>
+      </form>
+      <p>
+        <input type="text" class="searchForm" placeholder="タスクを検索" />
+      </p>
+      <ul class="todo__listFrame"></ul>
+
+      <!-- 編集フォーム -->
+      <div class="editTodo">
+        <div class="editTodo__wrapper">
+          <div class="editTodo__box">
+            <p class="editTodo__text"></p>
+            <input type="text" class="editForm__form" />
+            <button class="editTodo__submit">確定する</button>
+            <button class="editTodo__return">戻る</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

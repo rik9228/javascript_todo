@@ -36,25 +36,25 @@ const createListView = () => {
     li.classList.add("todo__listItem");
     li.textContent = todo.title;
 
-    // ボタンを生成する
-    for (let i = 0; i < 2; i++) {
-      const btn = document.createElement("button");
-      if (i === 0) {
-        btn.classList.add("button--edit");
-        btn.addEventListener("click", () => {
-          const todoId = btn.parentNode.dataset.num;
-          const todoTitle = btn.parentNode.textContent;
-          openEditForm(todoId, todoTitle);
-        });
-      } else {
-        btn.classList.add("button--delete");
-        btn.addEventListener("click", () => {
-          const todoId = btn.parentNode.dataset.num;
-          deleteTodo(todoId);
-        });
-      }
-      li.appendChild(btn);
-    }
+    const editBtn = document.createElement("button");
+    const deleteBtn = document.createElement("button");
+    editBtn.classList.add("button--edit");
+    deleteBtn.classList.add("button--delete");
+
+    editBtn.addEventListener("click", () => {
+      const todoId = editBtn.parentNode.dataset.num;
+      const todoTitle = editBtn.parentNode.textContent;
+      openEditForm(todoId, todoTitle);
+    });
+
+    deleteBtn.addEventListener("click", () => {
+      const todoId = deleteBtn.parentNode.dataset.num;
+      deleteTodo(todoId);
+    });
+
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
+
     list.appendChild(li);
   });
 };

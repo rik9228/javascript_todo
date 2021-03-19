@@ -32,12 +32,9 @@ const createListView = () => {
 
   todos.forEach((todo) => {
     const li = document.createElement("li");
-    // const span = document.createElement("span");
     li.dataset.num = todo.id;
     li.classList.add("todo__listItem");
     li.textContent = todo.title;
-    // span.classList.add("todo__id");
-    // span.textContent = todo.id;
 
     // ボタンを生成する
     for (let i = 0; i < 2; i++) {
@@ -57,7 +54,6 @@ const createListView = () => {
         });
       }
       li.appendChild(btn);
-      // li.prepend(span);
     }
     list.appendChild(li);
   });
